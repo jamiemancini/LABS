@@ -76,10 +76,28 @@ def all_names_by_hobby(filename):
         - list[list[str]]: a list of lists containing names
     """
 
-    # TODO: replace this with your code
+    #open the file
+    villager_data = open(filename)
 
-    return []
+    #create an empty set for the hobbies
+    hobbies = set()
 
+    for line in villager_data:
+        #create a list called person that has the information stated for each person
+        person = (line.split("|"))
+
+        #add the element at index[1] which is the hobbies to the empty set
+        hobbies.add(person[2])
+
+    #change the set into a list
+    hobbies_list = list(hobbies)
+
+    #add the names of the animals for each list of hobbies
+    
+    print(hobbies_list)
+    return hobbies
+
+all_names_by_hobby("villagers.csv")
 
 def all_data(filename):
     """Return all the data in a file.
