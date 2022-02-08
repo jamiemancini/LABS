@@ -25,13 +25,11 @@ def all_species(filename):
         #add the element at index[1] which is the species to the empty set
         species.add(person[1])
 
-    print(species)
     return species
-
 
 all_species("villagers.csv")
 
-def get_villagers_by_species(filename, search_string="All"):
+def get_villagers_by_species(filename, search_string):
     """Return a list of villagers' names by species.
 
     Arguments:
@@ -42,11 +40,30 @@ def get_villagers_by_species(filename, search_string="All"):
         - list[str]: a list of names
     """
 
+    #open the file
+    villager_data = open(filename)
+
+    #create an empty list
     villagers = []
 
-    # TODO: replace this with your code
+    #create a for loop to iterate through each line
+    for line in villager_data:
 
+        #create a list called person that has the information stated for each person
+        person = (line.split("|"))
+        species = person[1]
+        name = person[0]
+
+    
+        if species == search_string:
+            villagers.append(name)
+            
+    print(sorted(villagers))
     return sorted(villagers)
+    
+    
+
+get_villagers_by_species("villagers.csv", "Pig")
 
 
 def all_names_by_hobby(filename):
