@@ -72,4 +72,4 @@ async def on_message(message):
     await message.channel.send(make_text(chains))
 
 
-client.run(os.environ['DISCORD_TOKEN'])
+client.run(os.environ["DISCORD_TOKEN"])
